@@ -2,3 +2,8 @@ svg {
   display: block;
   margin-inline: auto;
 }
+
+.center {
+  display: grid;
+  place-items: center;
+}
