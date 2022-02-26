@@ -8,7 +8,7 @@
   height: 100%;
   background-color: #ffffff;
   border-radius: 5px;
-  padding-top: 0.9em;
+  padding-top: 0.7em;
   padding-bottom: 0.7em;
   text-transform: uppercase;
 }
@@ -24,6 +24,7 @@
   color: var(--score-txt);
   font-size: 0.75rem;
   font-weight: 600;
+  letter-spacing: 0.15em;
 }
 
 .score {
