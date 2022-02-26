@@ -13,18 +13,6 @@ header {
   width: max(4em, 100px);
 }
 
-.score {
-  height: clamp(6em, 20vw, 100px);
-  width: clamp(6em, 25vw, 20%);
-  background-color: #ffffff;
-  color: var(--bg-drk);
-  border-radius: 5px;
-  padding-top: 0.7em;
-  display: flex;
-  justify-content: center;
-  align-items: start;
-}
-
 svg {
   display: block;
   margin-inline: auto;
