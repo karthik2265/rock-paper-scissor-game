@@ -1,0 +1,33 @@
+:host {
+  height: clamp(6em, 20vw, 100px);
+  width: clamp(6em, 25vw, 20%);
+}
+
+.score-board {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding-top: 0.9em;
+  padding-bottom: 0.7em;
+  text-transform: uppercase;
+}
+
+.title,
+.score {
+  display: block;
+  width: inherit;
+  text-align: center;
+}
+
+.title {
+  color: var(--score-txt);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.score {
+  color: var(--bg-drk);
+  font-size: 3rem;
+  font-weight: 700;
+}

@@ -1,3 +1,18 @@
+header {
+  width: min(88%, 700px);
+  margin-inline: auto;
+  border: 3px solid var(--header-outline);
+  border-radius: 10px;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: max(4em, 100px);
+}
+
 svg {
   display: block;
   margin-inline: auto;
