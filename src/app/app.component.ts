@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   greeting: string = 'Hello Karthik 👋';
+  showRules: boolean = true;
 }

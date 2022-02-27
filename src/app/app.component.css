@@ -1,3 +1,8 @@
+:host {
+  height: 100vh;
+  padding-top: 20px;
+}
+
 header {
   width: min(88%, 700px);
   margin-inline: auto;
@@ -46,4 +51,36 @@ main {
     margin-right: 2em;
     padding-inline: 2em;
   }
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ffffff;
+}
+
+.modal p {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--bg-drk);
+  text-align: center;
+  margin-top: 3em;
+}
+
+.modal img {
+  margin-inline: auto;
+  margin-top: 6em;
+}
+
+.modal button {
+  background-color: transparent;
+  border: none;
+  display: block;
+  position: absolute;
+  bottom: 5em;
+  left: 50%;
 }
