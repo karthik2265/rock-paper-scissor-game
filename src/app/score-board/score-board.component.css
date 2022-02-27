@@ -1,6 +1,6 @@
 :host {
-  height: clamp(6em, 20vw, 100px);
-  width: clamp(6em, 25vw, 20%);
+  height: clamp(5.5em, 20vw, 100px);
+  width: clamp(5.5em, 25vw, 20%);
 }
 
 .score-board {
@@ -29,6 +29,6 @@
 
 .score {
   color: var(--bg-drk);
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 700;
 }

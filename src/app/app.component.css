@@ -1,6 +1,10 @@
 :host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-height: 100vh;
-  padding-top: 20px;
+  padding-top: 2.5em;
+  padding-bottom: 3em;
 }
 
 header {
@@ -19,18 +23,13 @@ header {
 }
 
 main {
-  height: 600px;
+  min-height: 100%;
   position: relative;
 }
 
 #game {
-  height: 500px; /* Temporary container */
+  min-height: 400px; /* Temporary container */
 }
-
-/* .rules {
-  position: absolute;
-  bottom: 5em;
-} */
 
 .rules button {
   display: block;
@@ -50,6 +49,7 @@ main {
     margin-left: auto;
     margin-right: 2em;
     padding-inline: 2em;
+    cursor: pointer;
   }
 }
 
@@ -59,28 +59,34 @@ main {
   left: 0;
   height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   background-color: #ffffff;
+  padding-top: 3.5em;
+  padding-bottom: 3.5em;
 }
 
 .modal p {
+  position: relative;
   font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--bg-drk);
   text-align: center;
-  margin-top: 3em;
+  margin-top: 1.5em;
 }
 
 .modal img {
+  position: relative;
   margin-inline: auto;
-  margin-top: 6em;
+  margin-bottom: 2.5em;
 }
 
 .modal button {
+  position: relative;
   background-color: transparent;
   border: none;
   display: block;
-  position: absolute;
-  bottom: 5em;
-  left: 50%;
 }
