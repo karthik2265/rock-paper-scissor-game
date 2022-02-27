@@ -1,3 +1,12 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding-top: 2.5em;
+  padding-bottom: 3em;
+}
+
 header {
   width: min(88%, 700px);
   margin-inline: auto;
@@ -13,12 +22,71 @@ header {
   width: max(4em, 100px);
 }
 
-svg {
+main {
+  min-height: 100%;
+  position: relative;
+}
+
+#game {
+  min-height: 400px; /* Temporary container */
+}
+
+.rules button {
   display: block;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  padding-top: 0.5em;
+  padding-bottom: 0.45em;
+  padding-inline: 1.6em;
   margin-inline: auto;
 }
 
-.center {
-  display: grid;
-  place-items: center;
+@media (min-width: 1279px) {
+  .rules button {
+    margin-left: auto;
+    margin-right: 2em;
+    padding-inline: 2em;
+    cursor: pointer;
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding-top: 3.5em;
+  padding-bottom: 3.5em;
+}
+
+.modal p {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--bg-drk);
+  text-align: center;
+  margin-top: 1.5em;
+}
+
+.modal img {
+  position: relative;
+  margin-inline: auto;
+  margin-bottom: 2.5em;
+}
+
+.modal button {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  display: block;
 }

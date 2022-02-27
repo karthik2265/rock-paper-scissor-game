@@ -14,11 +14,15 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+button {
   font-family: "Barlow Semi Condensed", sans-serif;
   background-color: var(--bg-drk);
   color: #ffffff;
-  padding-top: 2em;
+}
+
+body {
+  min-height: 100vh;
 }
 
 img {
