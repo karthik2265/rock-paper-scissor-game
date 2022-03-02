@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   greeting: string = 'Hello Karthik 👋';
   showRules: boolean = false;
+
+  @HostListener('window:keydown.escape', ['$event']) handleKeyDown(
+    event: KeyboardEvent
+  ) {
+    console.log(event);
+    this.closeRules();
+  }
 
   displayRules() {
     this.showRules = true;
