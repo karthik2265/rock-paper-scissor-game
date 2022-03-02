@@ -19,7 +19,7 @@ header {
 }
 
 .logo {
-  width: max(4em, 100px);
+  width: max(4em, 150px);
 }
 
 main {
@@ -42,15 +42,6 @@ main {
   padding-bottom: 0.45em;
   padding-inline: 1.6em;
   margin-inline: auto;
-}
-
-@media (min-width: 1279px) {
-  .rules button {
-    margin-left: auto;
-    margin-right: 2em;
-    padding-inline: 2em;
-    cursor: pointer;
-  }
 }
 
 .modal {
@@ -91,7 +82,7 @@ main {
   display: block;
 }
 
-@media (min-width: 1279px) {
+@media (min-width: 768px) {
   .modal {
     display: block;
     top: 50%;
@@ -130,5 +121,14 @@ main {
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(1px);
     z-index: 5;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rules button {
+    margin-left: auto;
+    margin-right: 2em;
+    padding-inline: 2em;
+    cursor: pointer;
   }
 }
