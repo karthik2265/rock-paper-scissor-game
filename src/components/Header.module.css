@@ -1,0 +1,49 @@
+.header {
+  border: 2px solid var(--Header-Outline);
+  border-radius: 10px;
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+  line-height: 0.9;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+span {
+  display: block;
+}
+
+.score-space {
+  background-color: red;
+  padding: 1rem 2.5rem;
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  row-gap: 0.35rem;
+  background-color: white;
+}
+
+.score-text {
+  color: var(--Score-Text);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.score {
+  color: var(--Dark-Text);
+  font-size: 3rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    width: 80%;
+    font-size: 1.5rem;
+  }
+
+  .score-text {
+    font-size: 1rem;
+  }
+}

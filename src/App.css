@@ -1,0 +1,39 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+.App {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+    var(--Radial-Gradient-1),
+    var(--Radial-Gradient-2)
+  );
+  display: grid;
+  place-items: center;
+}
+
+.buttons-space {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-space > * {
+  border: 2px solid var(--Header-Outline);
+  padding: 0.25rem 1.25rem;
+  border-radius: 5px;
+  color: rgb(224, 228, 232);
+}
+
+.buttons-space > *:hover {
+  cursor: pointer;
+}
+
+.toggle-difficulty-btn {
+  margin-left: 1rem;
+}
+
+.rules-btn {
+  margin-right: 1rem;
+}

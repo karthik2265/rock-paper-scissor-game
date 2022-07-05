@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* background */
+  --Radial-Gradient-1: hsl(214, 47%, 23%);
+  --Radial-Gradient-2: hsl(237, 49%, 15%);
+  /* neutral */
+  --Dark-Text: hsl(229, 25%, 31%);
+  --Score-Text: hsl(229, 64%, 46%);
+  --Header-Outline: hsl(217, 16%, 45%);
+  /* primary */
+  --Scissors-Gradient-1: hsl(39, 89%, 49%);
+  --Scissors-Gradient-2: hsl(40, 84%, 53%);
+  --Paper-Gradient-1: hsl(230, 89%, 62%);
+  --Paper-Gradient-2: hsl(230, 89%, 65%);
+  --Rock-Gradient-1: hsl(349, 71%, 52%);
+  --Rock-Gradient-2: hsl(349, 70%, 56%);
+  --Lizard-Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
+  --Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+}
