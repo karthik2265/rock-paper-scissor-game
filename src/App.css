@@ -10,6 +10,7 @@
     var(--Radial-Gradient-2)
   );
   display: grid;
+  padding: 1.5rem;
   place-items: center;
 }
 
@@ -17,6 +18,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-self: flex-end;
 }
 
 .buttons-space > * {

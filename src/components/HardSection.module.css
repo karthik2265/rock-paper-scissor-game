@@ -1,0 +1,59 @@
+.hard-section {
+  background-image: url('../images/bg-pentagon.svg');
+  width: 329px;
+  height: 313px;
+  position: relative;
+  align-self: center;
+}
+
+.img-space {
+  background-color: white;
+  /* padding: 20px; */
+  width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  position: absolute;
+  border: 12.5px solid;
+}
+
+.img-space:hover {
+  cursor: pointer;
+}
+
+.rock-img-space {
+  bottom: -10%;
+  left: 60%;
+  border-color: var(--Rock-Gradient-1);
+}
+
+.paper-img-space {
+  top: 20%;
+  left: 68%;
+  border-color: var(--Paper-Gradient-1);
+}
+
+.scissors-img-space {
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-color: var(--Scissors-Gradient-1);
+}
+
+.lizard-img-space {
+  bottom: -10%;
+  border-color: var(--Lizard-Gradient-1);
+}
+
+.spock-img-space {
+  border-color: var(--Cyan-1);
+  top: 20%;
+  left: -5%;
+}
+
+@media only screen and (max-width: 650px) {
+  .hard-section {
+    margin-bottom: 50px;
+  }
+}

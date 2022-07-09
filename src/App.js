@@ -5,7 +5,6 @@ import {
   Navigate,
   useLocation,
   useNavigate,
-  useParams,
 } from 'react-router-dom'
 import {
   Header,
@@ -44,7 +43,7 @@ function App() {
           <Route path='/easy' element={<EasySection />}></Route>
           <Route path='/hard' element={<HardSection></HardSection>}></Route>
           <Route
-            path='/result:difficulty/:choice'
+            path='/result:difficulty:choice'
             element={<ResultSection />}
           ></Route>
         </Routes>

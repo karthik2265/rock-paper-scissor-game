@@ -4,6 +4,7 @@ import { ReactComponent as PaperImage } from '../images/icon-paper.svg'
 import { ReactComponent as ScissorsImage } from '../images/icon-scissors.svg'
 // styles
 import classes from './EasySection.module.css'
+// page-info
 import { useNavigate } from 'react-router-dom'
 
 const EasySection = () => {

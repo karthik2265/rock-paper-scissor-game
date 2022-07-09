@@ -3,15 +3,15 @@
   width: 305px;
   height: 277px;
   position: relative;
-  margin-top: 75px;
 }
 
 .img-space {
   background-color: white;
-  padding: 25px;
+  width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
   border-radius: 50%;
-  width: max-content;
-  height: max-content;
   position: absolute;
   border: 15px solid;
 }
@@ -39,10 +39,4 @@
   left: 50%;
   transform: translate(-50%, -2%);
   border-color: var(--Rock-Gradient-1);
-}
-
-@media only screen and (max-width: 650px) {
-  .easy-section {
-    margin-top: 0;
-  }
 }
