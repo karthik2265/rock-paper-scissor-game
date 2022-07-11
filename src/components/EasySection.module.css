@@ -16,7 +16,7 @@
   border: 15px solid;
 }
 
-.img-space:hover {
+.img-space > *:hover {
   cursor: pointer;
 }
 

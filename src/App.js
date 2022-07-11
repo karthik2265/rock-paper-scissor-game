@@ -1,4 +1,6 @@
+// styles
 import './App.css'
+// navigation state
 import {
   Route,
   Routes,
@@ -6,6 +8,7 @@ import {
   useLocation,
   useNavigate,
 } from 'react-router-dom'
+// components
 import {
   Header,
   EasySection,
@@ -13,8 +16,11 @@ import {
   ResultSection,
   RulesModal,
 } from './components/'
+// app wide state
 import { appContext } from './store'
 import { useContext } from 'react'
+// framer-motion
+import { motion } from 'framer-motion'
 
 function App() {
   const location = useLocation()
@@ -37,28 +43,31 @@ function App() {
   return (
     <div className='App'>
       <Header></Header>
-      <div className='main'>
-        <Routes>
-          <Route path='/' element={<Navigate replace to='/easy' />}></Route>
-          <Route path='/easy' element={<EasySection />}></Route>
-          <Route path='/hard' element={<HardSection></HardSection>}></Route>
-          <Route
-            path='/result:difficulty:choice'
-            element={<ResultSection />}
-          ></Route>
-        </Routes>
-      </div>
+      <Routes>
+        <Route path='/' element={<Navigate replace to='/easy' />}></Route>
+        <Route path='/easy' element={<EasySection />}></Route>
+        <Route path='/hard' element={<HardSection></HardSection>}></Route>
+        <Route
+          path='/result/:difficulty/:userChoice/:machineChoice'
+          element={<ResultSection />}
+        ></Route>
+      </Routes>
       {appCtx.rulesModalIsOpen ? <RulesModal /> : null}
       <div className='buttons-space'>
-        <div
+        <motion.div
           className='toggle-difficulty-btn'
           onClick={toggleDifficultyBtnClickHandler}
+          whileTap={{ scale: 0.9 }}
         >
           {location.pathname.includes('easy') ? 'HARD' : 'EASY'}
-        </div>
-        <div className='rules-btn' onClick={rulesBtnClickHandler}>
+        </motion.div>
+        <motion.div
+          className='rules-btn'
+          onClick={rulesBtnClickHandler}
+          whileTap={{ scale: 0.9 }}
+        >
           RULES
-        </div>
+        </motion.div>
       </div>
     </div>
   )

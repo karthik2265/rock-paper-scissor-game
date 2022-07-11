@@ -18,7 +18,7 @@
   border: 12.5px solid;
 }
 
-.img-space:hover {
+.img-space > *:hover {
   cursor: pointer;
 }
 
@@ -52,8 +52,4 @@
   left: -5%;
 }
 
-@media only screen and (max-width: 650px) {
-  .hard-section {
-    margin-bottom: 50px;
-  }
-}
+

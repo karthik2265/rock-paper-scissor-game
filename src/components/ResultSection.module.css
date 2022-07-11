@@ -1,0 +1,74 @@
+.img-space {
+  background-color: white;
+  width: 220px;
+  height: 220px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 25px solid;
+}
+
+.rock-img-space {
+  border-color: var(--Rock-Gradient-1);
+}
+
+.paper-img-space {
+  border-color: var(--Paper-Gradient-1);
+}
+
+.scissors-img-space {
+  border-color: var(--Scissors-Gradient-1);
+}
+
+.lizard-img-space {
+  border-color: var(--Lizard-Gradient-1);
+}
+
+.spock-img-space {
+  border-color: var(--Cyan-1);
+}
+
+.main-space {
+  display: flex;
+  justify-content: center;
+  column-gap: 5rem;
+  width: 100%;
+  align-items: center;
+}
+
+.choice-component-space {
+  color: white;
+  font-weight: 600;
+  font-size: 1.25rem;
+  display: grid;
+  place-items: center;
+  row-gap: 3rem;
+}
+
+.result-space > p {
+  color: white;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.result-space > div {
+  color: var(--Dark-text);
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.result-space > div:hover {
+  color: red;
+}
+
+.winner {
+  box-shadow: 0 0 0 50px rgba(255, 255, 255, 0.05),
+    0 0 0 100px rgba(255, 255, 255, 0.02), 0 0 0 150px rgba(255, 255, 255, 0.01);
+  border-radius: 50%;
+}

@@ -8,6 +8,8 @@ import { ReactComponent as LizardImage } from '../images/icon-lizard.svg'
 import classes from './HardSection.module.css'
 // page-info
 import { useNavigate } from 'react-router-dom'
+// framer-motion
+import { motion } from 'framer-motion'
 
 const HardSection = () => {
   const navigate = useNavigate()
@@ -15,49 +17,73 @@ const HardSection = () => {
 
   // event handler functions
   function clickHandler(choice) {
-    navigate(`/result/${difficulty}/${choice}`)
+    const choices = ['rock', 'paper', 'scissors', 'spock', 'lizard']
+    const machineChoice = choices[Math.floor(Math.random() * 5)]
+    navigate(`/result/${difficulty}/${choice}/${machineChoice}`)
   }
   return (
     <div className={classes['hard-section']}>
-      <div
-        onClick={() => {
-          clickHandler('paper')
-        }}
-        className={classes['img-space'] + ' ' + classes['paper-img-space']}
-      >
-        <PaperImage />
+      <div className={classes['img-space'] + ' ' + classes['paper-img-space']}>
+        <motion.div
+          onClick={() => {
+            clickHandler('paper')
+          }}
+          whileTap={{
+            scale: 0.8,
+          }}
+        >
+          <PaperImage />
+        </motion.div>
       </div>
       <div
-        onClick={() => {
-          clickHandler('scissors')
-        }}
         className={classes['img-space'] + ' ' + classes['scissors-img-space']}
       >
-        <ScissorsImage />
+        <motion.div
+          onClick={() => {
+            clickHandler('scissors')
+          }}
+          whileTap={{
+            scale: 0.8,
+          }}
+        >
+          <ScissorsImage />
+        </motion.div>
       </div>
-      <div
-        onClick={() => {
-          clickHandler('rock')
-        }}
-        className={classes['img-space'] + ' ' + classes['rock-img-space']}
-      >
-        <RockImage />
+      <div className={classes['img-space'] + ' ' + classes['rock-img-space']}>
+        <motion.div
+          onClick={() => {
+            clickHandler('rock')
+          }}
+          whileTap={{
+            scale: 0.8,
+          }}
+        >
+          <RockImage />
+        </motion.div>
       </div>
-      <div
-        onClick={() => {
-          clickHandler('lizard')
-        }}
-        className={classes['img-space'] + ' ' + classes['lizard-img-space']}
-      >
-        <LizardImage />
+      <div className={classes['img-space'] + ' ' + classes['lizard-img-space']}>
+        <motion.div
+          onClick={() => {
+            clickHandler('lizard')
+          }}
+          whileTap={{
+            scale: 0.8,
+          }}
+        >
+          <LizardImage />
+        </motion.div>
       </div>
-      <div
-        onClick={() => {
-          clickHandler('spock')
-        }}
-        className={classes['img-space'] + ' ' + classes['spock-img-space']}
-      >
-        <SpockImage />
+      <div className={classes['img-space'] + ' ' + classes['spock-img-space']}>
+        <motion.div
+          onClick={() => {
+            clickHandler('spock')
+          }}
+          whileTap={{
+            scale: 0.8,
+          }}
+        >
+          <SpockImage />
+        </motion.div>
       </div>
     </div>
   )

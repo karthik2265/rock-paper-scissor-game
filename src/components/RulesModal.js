@@ -1,14 +1,19 @@
-// @collapse
 import React from 'react'
+// styles
 import classes from './RulesModal.module.css'
+// navigation state
 import { useLocation } from 'react-router-dom'
+// app wide state
 import { useContext } from 'react'
 import { appContext } from '../store/index'
+// framer-motion
+import { motion } from 'framer-motion'
 
 const RulesModal = () => {
   const location = useLocation()
   const isEasySection = location.pathname.includes('easy')
   const appCtx = useContext(appContext)
+  const isOpen = appCtx.rulesModalIsOpen
   // mini components
   const gameRules = isEasySection ? (
     <svg xmlns='http://www.w3.org/2000/svg' width='304' height='270'>

@@ -6,41 +6,59 @@ import { ReactComponent as ScissorsImage } from '../images/icon-scissors.svg'
 import classes from './EasySection.module.css'
 // page-info
 import { useNavigate } from 'react-router-dom'
+// framer-motion
+import { motion } from 'framer-motion'
 
 const EasySection = () => {
   const navigate = useNavigate()
   const difficulty = 'easy'
 
   // event handler functions
-  function clickHandler(choice) {
-    navigate(`/result/${difficulty}/${choice}`)
+  function clickHandler(userChoice) {
+    const choices = ['rock', 'paper', 'scissors']
+    const machineChoice = choices[Math.floor(Math.random() * 3)]
+    navigate(`/result/${difficulty}/${userChoice}/${machineChoice}`)
   }
 
   return (
     <div className={classes['easy-section']}>
-      <div
-        onClick={() => {
-          clickHandler('paper')
-        }}
-        className={classes['img-space'] + ' ' + classes['paper-img-space']}
-      >
-        <PaperImage />
+      <div className={classes['img-space'] + ' ' + classes['paper-img-space']}>
+        <motion.div
+          onClick={() => {
+            clickHandler('paper')
+          }}
+          whileTap={{
+            scale: 0.8,
+          }}
+        >
+          <PaperImage />
+        </motion.div>{' '}
       </div>
       <div
-        onClick={() => {
-          clickHandler('scissors')
-        }}
         className={classes['img-space'] + ' ' + classes['scissors-img-space']}
       >
-        <ScissorsImage />
+        <motion.div
+          onClick={() => {
+            clickHandler('scissors')
+          }}
+          whileTap={{
+            scale: 0.8,
+          }}
+        >
+          <ScissorsImage />
+        </motion.div>
       </div>
-      <div
-        onClick={() => {
-          clickHandler('rock')
-        }}
-        className={classes['img-space'] + ' ' + classes['rock-img-space']}
-      >
-        <RockImage />
+      <div className={classes['img-space'] + ' ' + classes['rock-img-space']}>
+        <motion.div
+          onClick={() => {
+            clickHandler('rock')
+          }}
+          whileTap={{
+            scale: 0.8,
+          }}
+        >
+          <RockImage />
+        </motion.div>{' '}
       </div>
     </div>
   )
