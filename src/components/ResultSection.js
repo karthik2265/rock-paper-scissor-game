@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 // state
 import { appContext } from '../store'
 // navigation
@@ -52,7 +52,10 @@ const nameToChoiceComponentsMap = new Map([
 const ResultSection = () => {
   const { difficulty, userChoice, machineChoice } = useParams()
   const appCtx = useContext(appContext)
-  const userWon = didUserWin(userChoice, machineChoice)
+  let [userWon, setUserWon] = useState(null)
+  setTimeout(() => {
+    setUserWon(didUserWin(userChoice, machineChoice))
+  }, 3300)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -67,11 +70,35 @@ const ResultSection = () => {
     <div className={classes['main-space']}>
       <div className={classes['choice-component-space']}>
         <p>YOU PICKED</p>
-        <div className={userWon ? classes['winner'] : ''}>
+        <motion.div
+          initial={{
+            x: -800,
+          }}
+          animate={{
+            x: 0,
+            transition: {
+              delay: 0.3,
+              duration: 1,
+            },
+          }}
+          className={userWon === true ? classes['winner'] : ''}
+        >
           {nameToChoiceComponentsMap.get(userChoice)}
-        </div>
+        </motion.div>
       </div>
-      <div className={classes['result-space']}>
+      <motion.div
+        initial={{
+          scale: 0,
+        }}
+        animate={{
+          scale: 1,
+          transition: {
+            delay: 3.3,
+            duration: 0.5,
+          },
+        }}
+        className={classes['result-space']}
+      >
         <p>{userWon ? 'YOU WIN' : 'YOU LOSE'}</p>
         <motion.div
           whileTap={{
@@ -83,13 +110,24 @@ const ResultSection = () => {
         >
           PLAY AGAIN
         </motion.div>
-      </div>
-      {/* machineChoice */}
+      </motion.div>
       <div className={classes['choice-component-space']}>
         <p>THE HOUSE PICKED</p>
-        <div className={!userWon ? classes['winner'] : ''}>
+        <motion.div
+          initial={{
+            x: 800,
+          }}
+          animate={{
+            x: 0,
+            transition: {
+              duration: 1,
+              delay: 1.75,
+            },
+          }}
+          className={userWon === false ? classes['winner'] : ''}
+        >
           {nameToChoiceComponentsMap.get(machineChoice)}
-        </div>
+        </motion.div>
       </div>
     </div>
   )

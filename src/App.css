@@ -12,6 +12,7 @@
   display: grid;
   padding: 1.5rem;
   place-items: center;
+  overflow: hidden;
 }
 
 .buttons-space {
