@@ -43,7 +43,6 @@ function App() {
   useEffect(() => {
     const App = document.getElementById('App')
     App.style.height = +window.innerHeight + 'px'
-    console.log(App.style.height, window.innerHeight)
   }, [])
 
   return (
