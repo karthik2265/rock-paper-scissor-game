@@ -12,8 +12,8 @@
   display: grid;
   padding: 1.5rem;
   place-items: center;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow: hidden;
+  max-height: -webkit-fill-available;
 }
 
 .buttons-space {
