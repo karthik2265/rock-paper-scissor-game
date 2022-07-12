@@ -64,7 +64,7 @@ const ResultSection = () => {
     } else if (userWon === false) {
       appCtx.setScore((s) => s - 1)
     }
-  }, [])
+  }, [userWon])
 
   return (
     <div className={classes['main-space']}>
