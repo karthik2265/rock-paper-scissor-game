@@ -1,4 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
+// state
+import { appContext } from '../store'
 // navigation
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
@@ -49,19 +51,26 @@ const nameToChoiceComponentsMap = new Map([
 
 const ResultSection = () => {
   const { difficulty, userChoice, machineChoice } = useParams()
-  const userWon = false
+  const appCtx = useContext(appContext)
+  const userWon = didUserWin(userChoice, machineChoice)
   const navigate = useNavigate()
+
+  useEffect(() => {
+    if (userWon) {
+      appCtx.setScore((s) => s + 1)
+    } else {
+      appCtx.setScore((s) => s - 1)
+    }
+  }, [])
 
   return (
     <div className={classes['main-space']}>
-      {/* userChoice */}
       <div className={classes['choice-component-space']}>
         <p>YOU PICKED</p>
-        <div className={classes['winner']}>
+        <div className={userWon ? classes['winner'] : ''}>
           {nameToChoiceComponentsMap.get(userChoice)}
         </div>
       </div>
-      {/* result win or lose or draw */}
       <div className={classes['result-space']}>
         <p>{userWon ? 'YOU WIN' : 'YOU LOSE'}</p>
         <motion.div
@@ -78,12 +87,56 @@ const ResultSection = () => {
       {/* machineChoice */}
       <div className={classes['choice-component-space']}>
         <p>THE HOUSE PICKED</p>
-        <div className={classes['winner']}>
+        <div className={!userWon ? classes['winner'] : ''}>
           {nameToChoiceComponentsMap.get(machineChoice)}
         </div>
       </div>
     </div>
   )
+  // utility funcs
+  function didUserWin(userChoice, machineChoice) {
+    let userWon
+    // rock
+    if (userChoice === 'rock' && machineChoice === 'paper') userWon = false
+    else if (userChoice === 'rock' && machineChoice === 'scissors')
+      userWon = true
+    else if (userChoice === 'rock' && machineChoice === 'spock') userWon = false
+    else if (userChoice === 'rock' && machineChoice === 'lizard') userWon = true
+    // paper
+    else if (userChoice === 'paper' && machineChoice === 'rock') userWon = true
+    else if (userChoice === 'paper' && machineChoice === 'scissors')
+      userWon = false
+    else if (userChoice === 'paper' && machineChoice === 'spock') userWon = true
+    else if (userChoice === 'paper' && machineChoice === 'lizard')
+      userWon = false
+    // scissors
+    else if (userChoice === 'scissors' && machineChoice === 'rock')
+      userWon = false
+    else if (userChoice === 'scissors' && machineChoice === 'paper')
+      userWon = true
+    else if (userChoice === 'scissors' && machineChoice === 'spock')
+      userWon = false
+    else if (userChoice === 'scissors' && machineChoice === 'lizard')
+      userWon = true
+    // spock
+    else if (userChoice === 'spock' && machineChoice === 'rock') userWon = true
+    else if (userChoice === 'spock' && machineChoice === 'paper')
+      userWon = false
+    else if (userChoice === 'spock' && machineChoice === 'scissors')
+      userWon = true
+    else if (userChoice === 'spock' && machineChoice === 'lizard')
+      userWon = false
+    // lizard
+    else if (userChoice === 'lizard' && machineChoice === 'rock')
+      userWon = false
+    else if (userChoice === 'lizard' && machineChoice === 'paper')
+      userWon = true
+    else if (userChoice === 'lizard' && machineChoice === 'scissors')
+      userWon = false
+    else if (userChoice === 'lizard' && machineChoice === 'spock')
+      userWon = true
+    return userWon
+  }
 }
 
 export { ResultSection }

@@ -16,7 +16,8 @@ const EasySection = () => {
   // event handler functions
   function clickHandler(userChoice) {
     const choices = ['rock', 'paper', 'scissors']
-    const machineChoice = choices[Math.floor(Math.random() * 3)]
+    choices.splice(choices.indexOf(userChoice), 1)
+    const machineChoice = choices[Math.floor(Math.random() * 2)]
     navigate(`/result/${difficulty}/${userChoice}/${machineChoice}`)
   }
 

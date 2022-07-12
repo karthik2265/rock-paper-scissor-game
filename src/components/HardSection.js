@@ -16,10 +16,11 @@ const HardSection = () => {
   const difficulty = 'hard'
 
   // event handler functions
-  function clickHandler(choice) {
+  function clickHandler(userChoice) {
     const choices = ['rock', 'paper', 'scissors', 'spock', 'lizard']
-    const machineChoice = choices[Math.floor(Math.random() * 5)]
-    navigate(`/result/${difficulty}/${choice}/${machineChoice}`)
+    choices.splice(choices.indexOf(userChoice), 1)
+    const machineChoice = choices[Math.floor(Math.random() * 4)]
+    navigate(`/result/${difficulty}/${userChoice}/${machineChoice}`)
   }
   return (
     <div className={classes['hard-section']}>

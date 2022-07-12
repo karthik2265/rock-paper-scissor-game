@@ -4,9 +4,10 @@ const appContext = createContext(null)
 
 const AppContextProvider = (props) => {
   const [rulesModalIsOpen, setRulesModalIsOpen] = useState(false)
+  const [score, setScore] = useState(0)
   return (
     <appContext.Provider
-      value={{ score: 0, rulesModalIsOpen, setRulesModalIsOpen }}
+      value={{ score, setScore, rulesModalIsOpen, setRulesModalIsOpen }}
     >
       {props.children}
     </appContext.Provider>
