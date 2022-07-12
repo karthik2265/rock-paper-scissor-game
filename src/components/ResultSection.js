@@ -59,9 +59,9 @@ const ResultSection = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (userWon) {
+    if (userWon === true) {
       appCtx.setScore((s) => s + 1)
-    } else {
+    } else if (userWon === false) {
       appCtx.setScore((s) => s - 1)
     }
   }, [])
