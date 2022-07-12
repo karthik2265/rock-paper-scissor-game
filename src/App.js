@@ -18,7 +18,7 @@ import {
 } from './components/'
 // app wide state
 import { appContext } from './store'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 // framer-motion
 import { motion } from 'framer-motion'
 
@@ -40,8 +40,14 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    const App = document.getElementById('App')
+    App.style.height = +window.innerHeight + 'px'
+    console.log(App.style.height, window.innerHeight)
+  }, [])
+
   return (
-    <div className='App'>
+    <div id='App'>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Navigate replace to='/easy' />}></Route>

@@ -1,10 +1,10 @@
 /* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
 
-.App {
+#App {
   font-family: 'Barlow Semi Condensed', sans-serif;
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   background: radial-gradient(
     var(--Radial-Gradient-1),
     var(--Radial-Gradient-2)
@@ -13,7 +13,6 @@
   padding: 1.5rem;
   place-items: center;
   overflow: hidden;
-  max-height: -webkit-fill-available;
 }
 
 .buttons-space {
